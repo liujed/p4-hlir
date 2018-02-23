@@ -24,7 +24,7 @@ class PreprocessorException(Exception):
 class Preprocessor(object):
     def __init__(self):
         self.executable_path = "gcc"
-        self.args = ["-E", "-x", "c", "-w"]
+        self.args = ["-E", "-x", "c", "-w", "-undef", "-nostdinc"]
 
     def preprocess_file(self, filename, dest=None):
         return self._preprocess(filename, "", dest)
